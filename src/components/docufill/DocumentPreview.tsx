@@ -1,3 +1,4 @@
+import type { ReactElement, ReactNode } from "react";
 import { FileText, Lock } from "lucide-react";
 
 export interface PreviewValues {
