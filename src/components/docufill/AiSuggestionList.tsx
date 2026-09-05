@@ -14,6 +14,7 @@ import {
   type Confidence,
   type FieldType,
   type SuggestedField,
+  isFieldType,
 } from "@/lib/docufill";
 
 const CONFIDENCE_LABEL: Record<Confidence, string> = {
@@ -115,7 +116,9 @@ export function AiSuggestionList({
                     <Select
                       value={suggestion.type}
                       disabled={!suggestion.included}
-                      onValueChange={(value) => onTypeChange(suggestion.id, value)}
+                      onValueChange={(value) => {
+                if (isFieldType(value)) onTypeChange(suggestion.id, value);
+              }}
                     >
                       <SelectTrigger id={typeId} className="mt-1.5 w-full">
                         <SelectValue placeholder="Select a type" />

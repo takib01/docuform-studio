@@ -8,7 +8,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { FIELD_TYPE_OPTIONS, type DetectedField, type FieldType } from "@/lib/docufill";
+import { FIELD_TYPE_OPTIONS, type DetectedField, type FieldType   isFieldType,
+} from "@/lib/docufill";
 import { LayoutWarning } from "./LayoutWarning";
 
 export interface FieldEditorProps {
@@ -43,7 +44,9 @@ export function FieldEditor({ field, onLabelChange, onTypeChange }: FieldEditorP
           <Label htmlFor={typeId} className="text-xs font-semibold uppercase tracking-wide">
             Field type
           </Label>
-          <Select value={field.type} onValueChange={(value) => onTypeChange(field.id, value)}>
+          <Select value={field.type} onValueChange={(value) => {
+                if (isFieldType(value)) onTypeChange(field.id, value);
+              }}>
             <SelectTrigger id={typeId} className="mt-1.5 w-full">
               <SelectValue placeholder="Select a type" />
             </SelectTrigger>

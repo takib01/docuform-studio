@@ -215,3 +215,7 @@ export function formatFileSize(bytes: number): string {
 export function isValidPlaceholderKey(key: string): boolean {
   return /^[a-z0-9_]+$/.test(key);
 }
+
+export function isFieldType(value: string): value is FieldType {
+  return FIELD_TYPE_OPTIONS.some((option) => option.value === value);
+}
