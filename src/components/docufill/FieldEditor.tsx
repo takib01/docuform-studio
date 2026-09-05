@@ -8,7 +8,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { FIELD_TYPE_OPTIONS, type DetectedField, type FieldType   isFieldType,
+import {
+  FIELD_TYPE_OPTIONS,
+  isFieldType,
+  type DetectedField,
+  type FieldType,
+} from "@/lib/docufill";
 } from "@/lib/docufill";
 import { LayoutWarning } from "./LayoutWarning";
 
