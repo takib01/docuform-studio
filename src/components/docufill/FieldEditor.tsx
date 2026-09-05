@@ -14,7 +14,6 @@ import {
   type DetectedField,
   type FieldType,
 } from "@/lib/docufill";
-} from "@/lib/docufill";
 import { LayoutWarning } from "./LayoutWarning";
 
 export interface FieldEditorProps {
